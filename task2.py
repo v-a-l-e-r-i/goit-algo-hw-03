@@ -8,8 +8,11 @@ from random import sample
 
 
 def get_numbers_ticket(min_num, max_num, quantity):
-    return sorted(sample(range(min_num, max_num), k=quantity))
+    try:
+        return sorted(sample(range(min_num, max_num), k=quantity))
+    except ValueError:
+        return []
 
 
-lottery_numbers = get_numbers_ticket(1, 49, 6)
+lottery_numbers = get_numbers_ticket(10,14,6)
 print("Ваші лотерейні числа:", lottery_numbers)

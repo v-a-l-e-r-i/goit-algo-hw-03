@@ -9,10 +9,10 @@ def get_days_from_today(date):
     try:
         date = datetime.strptime(date, "%Y-%m-%d")
         today = datetime.today()
-        days = (date - today).days
+        days = (date - today).days + 1
         return days
     except ValueError:
-        print("Не коректний формат дати!")
+        return "Не коректний формат дати!"
 
 
-print(get_days_from_today('2020-10-09'))
+print(get_days_from_today('2024-06-18'))
